@@ -1,0 +1,121 @@
+span.red{
+  background: $colorRed;
+  color:#fff;
+  padding: 0px 5px;
+}
+
+h1.topic{
+  text-align: center;
+}
+
+a.calculate_cost {
+  display: block;
+  width: 270px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: $b;
+  background: -moz-linear-gradient(270deg, rgba(254,0,0,1) 0%, rgba(186,3,3,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(254,0,0,1)), color-stop(100%, rgba(186,3,3,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(270deg, rgba(254,0,0,1) 0%, rgba(186,3,3,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(270deg, rgba(254,0,0,1) 0%, rgba(186,3,3,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(270deg, rgba(254,0,0,1) 0%, rgba(186,3,3,1) 100%); /* ie10+ */
+  background: linear-gradient(180deg, rgba(254,0,0,1) 0%, rgba(186,3,3,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe0000', endColorstr='#ba0303',GradientType=0 ); /* ie6-9 */
+  font-size: 19px;
+  color:#fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-top:15px;
+  padding: 5px;
+  text-shadow: 1px 1px 3px $baseColor;
+}
+
+a.calculate_cost:hover{
+  text-decoration:none;
+}
+
+
+@media (min-width: 1200px) {
+  p.decision {
+    text-align: center;
+    font-size: 24px;
+    width: 752px;
+    margin: 0 auto;
+    font-family: $l;
+  }
+
+  h1.topic{
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+
+p.decision {
+  text-align: center;
+  font-family: $l;
+}
+
+p.decision span{
+  font-family: $b;
+}
+
+.caption_photo{
+  display: block;
+  width:100%;
+  float: left;
+  font-style: italic;
+  border-bottom: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+  font-size:16px;
+  text-align: center;
+  margin: 10px 0px;
+  padding: 5px 0;
+}
+
+.how_works img{
+  max-width: 100%;
+}
+
+.how_worksText{
+  font-family:$mpr;
+}
+
+.how_worksText span.textbold{
+  font-family:$b;
+}
+
+.how_worksText span{
+  color: $colorRed;
+}
+
+.workInfoWr{
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+.workInfo{
+  position: absolute;
+  top: 0;
+  display: none;
+  background: #565656;
+  width: 100%;
+  height: 100%;
+  padding-left: 25px;
+  opacity: 0.9;
+  cursor:pointer;
+}
+
+.workInfoWr:hover .workInfo{
+  display: block;
+}
+
+.workTitle {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #fff;
+  opacity: 1;
+}
