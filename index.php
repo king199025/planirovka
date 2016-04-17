@@ -43,7 +43,7 @@ get_header(); // подключаем header.php ?>
 			<span class="red">Решение есть!</span>
 		</p>
 
-		<img src="<?php bloginfo('template_directory'); ?>/img/img1.jpg" alt="">
+		<img class="imgDesc" src="<?php bloginfo('template_directory'); ?>/img/img1.jpg" alt="">
 		<span class="caption_photo">Однокомнатная квартира, студия, 87 м2, стиль Лофт, светлая гамма</span>
 	</div>
 </section>
@@ -71,7 +71,7 @@ get_header(); // подключаем header.php ?>
 <section class="work_examples">
 	<div class="row">
 		<h2>Примеры работ</h2>
-		<div class="col-lg-4 col-md-4">
+		<div class="col-lg-4 col-md-4 p0">
 			<div class="workInfoWr">
 				<img src="<?php bloginfo('template_directory'); ?>/img/work1.jpg" alt="">
 				<div class="workInfo">
@@ -82,12 +82,90 @@ get_header(); // подключаем header.php ?>
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4 col-md-4">2</div>
-		<div class="col-lg-4 col-md-4">3</div>
-		<div class="col-lg-4 col-md-4">4</div>
-		<div class="col-lg-4 col-md-4">5</div>
-		<div class="col-lg-4 col-md-4">6</div>
+		<div class="col-lg-4 col-md-4 p0">
+            <div class="workInfoWr">
+                <img src="<?php bloginfo('template_directory'); ?>/img/work2.jpg" alt="">
+                <div class="workInfo">
+                    <div class="workTitle">Квартира25</div>
+                    <div class="workDate">25 апреля, 2016 </div>
+                    <div class="workLine"></div>
+                    <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
+                </div>
+            </div>
+		</div>
+		<div class="col-lg-4 col-md-4 p0">
+            <div class="workInfoWr">
+                <img src="<?php bloginfo('template_directory'); ?>/img/work3.jpg" alt="">
+                <div class="workInfo">
+                    <div class="workTitle">Квартира25</div>
+                    <div class="workDate">25 апреля, 2016 </div>
+                    <div class="workLine"></div>
+                    <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
+                </div>
+            </div>
+		</div>
+		<div class="col-lg-4 col-md-4 p0">
+            <div class="workInfoWr">
+                <img src="<?php bloginfo('template_directory'); ?>/img/work4.jpg" alt="">
+                <div class="workInfo">
+                    <div class="workTitle">Квартира25</div>
+                    <div class="workDate">25 апреля, 2016 </div>
+                    <div class="workLine"></div>
+                    <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
+                </div>
+            </div></div>
+		<div class="col-lg-4 col-md-4 p0">
+            <div class="workInfoWr">
+                <img src="<?php bloginfo('template_directory'); ?>/img/work5.jpg" alt="">
+                <div class="workInfo">
+                    <div class="workTitle">Квартира25</div>
+                    <div class="workDate">25 апреля, 2016 </div>
+                    <div class="workLine"></div>
+                    <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
+                </div>
+            </div></div>
+		<div class="col-lg-4 col-md-4 p0">
+            <div class="workInfoWr">
+                <img src="<?php bloginfo('template_directory'); ?>/img/work1.jpg" alt="">
+                <div class="workInfo">
+                    <div class="workTitle">Квартира25</div>
+                    <div class="workDate">25 апреля, 2016 </div>
+                    <div class="workLine"></div>
+                    <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
+                </div>
+            </div>
+		</div>
+        
+        <div class="load_more">
+            <img src="<?php bloginfo('template_directory'); ?>/img/load_more.png" alt=""/>
+        </div>
+        
 	</div>
+</section>
+
+<section class="value_work">
+    <div class="row">
+        <h2><span class="red">Стоимость разработки</span> дизайна вашего помещения</h2>
+        <div class="col-lg12">
+            <form action="">
+                <span>Планировка</span>
+                <input type="radio" name="plan" value=""/> 10-20 м<sup>2</sup> - 2 уе/м<sup>2</sup>
+                <input type="radio" name="plan" value=""/> 21-55 м<sup>2</sup> - 1,75 уе/м<sup>2</sup>
+                <input type="radio" name="plan" value=""/> 56-120 м<sup>2</sup> - 1,5 уе/м<sup>2</sup>
+                <input type="radio" name="plan" value=""/> свыше 120 м<sup>2</sup> - 1 уе/м<sup>2</sup>
+                <input type="text" placeholder="Значение"/>
+                <span>Электрические сети</span>
+                <input type="checkbox" name="electric_network"/>Розетки
+                <input type="checkbox" name="electric_network"/>Освещение выключатели
+                <input type="checkbox" name="electric_network"/>Теплый пол
+                <span>Ваная комната</span>
+                <input type="checkbox" name="bathroom"/>Привязки оборудования
+                <input type="checkbox" name="bathroom"/>Раскладка плитки
+                <span>Советы дизайнера</span>
+                
+            </form>
+        </div>
+    </div>
 </section>
 
 <?php get_footer(); // подключаем footer.php ?>
