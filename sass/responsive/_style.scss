@@ -23,6 +23,14 @@
       margin: 10px 0;
     }
   }
+
+  .input--line input[type="radio"] + label, .input--line input[type="checkbox"] + label {
+  	width: 100%;
+  	margin: 10px 0;
+  	span {
+  		display: inline-block;
+  	}
+  }
 }
 
 @media only screen and (max-width: 500px) {

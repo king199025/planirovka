@@ -176,21 +176,29 @@ get_header(); // подключаем header.php ?>
                     <input type="radio" name="plan" value=""/> свыше 120 м<sup>2</sup> - 1 уе/м<sup>2</sup>-->
                     <input type="text" placeholder="Значение"/>
                 </div>
+                
+                <div class="input--line">
 
-                <span>Электрические сети</span>
-                <input type="checkbox" name="electric_network"/>Розетки
-                <input type="checkbox" name="electric_network"/>Освещение выключатели
-                <input type="checkbox" name="electric_network"/>Теплый пол
-                <span>Ваная комната</span>
-                <input type="checkbox" name="bathroom"/>Привязки оборудования
-                <input type="checkbox" name="bathroom"/>Раскладка плитки
-                <span>Советы дизайнера</span>
-                <input type="checkbox" name="tip"/>Спецификация отделочных материалов
-                <input type="checkbox" name="tip"/>Спецификация осветительного оборудования
-                <input type="checkbox" name="tip"/>Спецификация сантехники
-                <input type="checkbox" name="tip"/>Спецификация мебели
-
-                <textarea name="text" id="" placeholder="Описание и Ваши пожелания" cols="30" rows="10"></textarea>
+                    <span>Электрические сети</span>
+                    <input type="checkbox" name="electric_network"/><label for=""><span>Розетки</span></label>
+                    <input type="checkbox" name="electric_network"/><label for=""><span>Освещение выключатели</span></label>
+                    <input type="checkbox" name="electric_network"/><label for=""><span>Теплый пол</span></label>
+                </div>
+                <div class="input--line">
+                    <span>Ваная комната</span>
+                    <input type="checkbox" name="bathroom"/><label for=""><span>Привязки оборудования</span></label>
+                    <input type="checkbox" name="bathroom"/><label for=""><span>Раскладка плитки</span></label>
+                </div>
+                <div class="input--line">
+                    <span>Советы дизайнера</span>
+                    <input type="checkbox" name="tip"/><label for=""><spanСпецификация отделочных материалов></span></label>
+                    <input type="checkbox" name="tip"/><label for=""><span>Спецификация осветительного оборудования</span></label>
+                    <input type="checkbox" name="tip"/><label for=""><span>Спецификация сантехники</span></label>
+                    <input type="checkbox" name="tip"/><label for=""><span>Спецификация мебели</span></label>
+                </div>
+                <div class="input--line">
+                    <textarea name="text" id="" placeholder="Описание и Ваши пожелания" cols="30" rows="10"></textarea>
+                </div>
                 <div>
                     <span>Стоимость</span> 26000$
                     <button>Отправить заявку</button>
