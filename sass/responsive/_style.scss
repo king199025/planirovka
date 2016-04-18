@@ -11,13 +11,9 @@
 }
 /* iphone 6+ */
 @media only screen and (max-width: 736px) {
-	#topnav{
-      height:auto;
-    }
-
-  #topnav ul{
-    height:auto;
-  }
+	.navbar-collapse hr {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 500px) {

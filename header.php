@@ -35,37 +35,34 @@
                 <div class="col-xs-12">
                     <a href="/"><img src="<?php bloginfo('template_directory'); ?>/img/logo.jpg" class="logo" alt=""></a>
 
-
-                    <nav class="navbar navbar-default">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target="#topnav" aria-expanded="false">
-                                <span class="sr-only">Меню</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="collapse navbar-collapse" id="topnav">
-                            <?php /*$args = array( // опции для вывода верхнего меню, чтобы они работали, меню должно быть создано в админке
-                                'theme_location' => 'top', // идентификатор меню, определен в register_nav_menus() в functions.php
-                                'container' => false, // обертка списка, тут не нужна
-                                'menu_id' => 'top-nav-ul', // id для ul
-                                'items_wrap' => '<ul id="%1$s" class="nav navbar-nav %2$s">%3$s</ul>',
-                                'menu_class' => 'top-menu', // класс для ul, первые 2 обязательны
-                                'walker' => new bootstrap_menu(true) // верхнее меню выводится по разметке бутсрапа, см класс в functions.php, если по наведению субменю не раскрывать то передайте false
-                            );
-                            wp_nav_menu($args); // выводим верхнее меню
-                            */?>
-                            <ul class="nav navbar-nav">
-                                <li><a href="#">Примеры работ</a></li>
-                                <li><a href="#">Стоимость</a></li>
-                                <li><a href="#">Ответы</a></li>
-                                <li><a href="#">Контакты</a></li>
-                            </ul>
-
-                        </div>
-                    </nav>
+                                    
                 </div>
             </div>
         </header>
+
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="#">text_1</a></li>
+                <li><a href="#">text_2</a></li>
+                <li><a href="#">text_3</a></li>
+                <li><a href="#">text_4</a></li>
+              </ul>
+              <hr>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+        
