@@ -30,11 +30,24 @@ get_header(); // подключаем header.php ?>
 	<div class="row">
 		<h1 class="topic"><span class="red">Идеальный проект</span> вашей квартиры за реальную стоимость</h1>
 
-		<a href="#" class="calculate_cost">Расчитать стоимость</a>
+		<a href="#" class="calculate_cost">Расcчитать стоимость</a>
 
 		<div class="fotorama" data-navposition="top">
-			<img src="<?php bloginfo('template_directory'); ?>/img/img2.jpg" data-caption="One">
-			<img src="<?php bloginfo('template_directory'); ?>/img/img1.jpg" data-caption="Two">
+            <div data-img="<?php bloginfo('template_directory'); ?>/img/img2.jpg">
+                <span class="caption_photo">Однокомнатная квартира, студия, 87 м2, стиль Лофт, светлая гамма</span>
+            </div>
+            <div data-img="<?php bloginfo('template_directory'); ?>/img/img2.jpg">
+                <span class="caption_photo">Однокомнатная квартира, студия, 87 м2, стиль Лофт, светлая гамма</span>
+            </div>
+
+            <!--<div class="sliderWr">
+                <img src="<?php /*bloginfo('template_directory'); */?>/img/img2.jpg">" alt="">
+                <span class="caption_photo">Однокомнатная квартира, студия, 87 м2, стиль Лофт, светлая гамма</span>
+            </div>
+            <div class="sliderWr">
+                <img src="<?php /*bloginfo('template_directory'); */?>/img/img1.jpg">" alt="">
+                <span class="caption_photo">Еще текст</span>
+            </div>-->
 		</div>
 
 		<p class="decision">Дизайн-студии <span>не берутся за разработку</span> вашей квартиры из-за того
@@ -169,39 +182,38 @@ get_header(); // подключаем header.php ?>
                     <label for="plan4">
                         <span>свыше 120 м<sup>2</sup> - 1 уе/м<sup>2</sup></span>
                     </label>
-
-
-
-                    <!--<input type="radio" name="plan" value=""/> 56-120 м<sup>2</sup> - 1,5 уе/м<sup>2</sup>
-                    <input type="radio" name="plan" value=""/> свыше 120 м<sup>2</sup> - 1 уе/м<sup>2</sup>-->
                     <input type="text" placeholder="Значение"/>
                 </div>
                 
                 <div class="input--line">
-
                     <span>Электрические сети</span>
-                    <input type="checkbox" name="electric_network"/><label for=""><span>Розетки</span></label>
-                    <input type="checkbox" name="electric_network"/><label for=""><span>Освещение выключатели</span></label>
-                    <input type="checkbox" name="electric_network"/><label for=""><span>Теплый пол</span></label>
+                    <input type="checkbox" id="roz" name="electric_network"/>
+                        <label for="roz"><span>Розетки</span></label>
+                    <input type="checkbox" id="osv" name="electric_network"/>
+                        <label for="osv"><span>Освещение выключатели</span></label>
+                    <input type="checkbox" id="pol" name="electric_network"/>
+                    <label for="pol"><span>Теплый пол</span></label>
                 </div>
                 <div class="input--line">
                     <span>Ваная комната</span>
-                    <input type="checkbox" name="bathroom"/><label for=""><span>Привязки оборудования</span></label>
-                    <input type="checkbox" name="bathroom"/><label for=""><span>Раскладка плитки</span></label>
+                    <input type="checkbox" id="oborud" name="bathroom"/>
+                        <label for="oborud"><span>Привязки оборудования</span></label>
+                    <input type="checkbox" id="plitka" name="bathroom"/>
+                        <label for="plitka"><span>Раскладка плитки</span></label>
                 </div>
                 <div class="input--line">
                     <span>Советы дизайнера</span>
-                    <input type="checkbox" name="tip"/><label for=""><spanСпецификация отделочных материалов></span></label>
-                    <input type="checkbox" name="tip"/><label for=""><span>Спецификация осветительного оборудования</span></label>
-                    <input type="checkbox" name="tip"/><label for=""><span>Спецификация сантехники</span></label>
-                    <input type="checkbox" name="tip"/><label for=""><span>Спецификация мебели</span></label>
+                    <input type="checkbox" name="tip" id="otdmat"/><label for="otdmat"><span class="tipDiz">Спецификация отделочных <br>материалов</span></label>
+                    <input type="checkbox" name="tip" id="osvobor"/><label for="osvobor"><span class="tipDiz">Спецификация осветительного <br>оборудования</span></label>
+                    <input type="checkbox" name="tip" id="santex"/><label for="santex"><span>Спецификация сантехники</span></label>
+                    <input type="checkbox" name="tip" id="mebel"/><label for="mebel"><span>Спецификация мебели</span></label>
                 </div>
                 <div class="input--line">
-                    <textarea name="text" id="" placeholder="Описание и Ваши пожелания" cols="30" rows="10"></textarea>
+                    <textarea name="text" id="text" placeholder="Описание и Ваши пожелания" cols="30" rows="10"></textarea>
                 </div>
-                <div>
+                <div class="infoValue">
                     <span>Стоимость</span> 26000$
-                    <button>Отправить заявку</button>
+                    <input type="submit" value="Отправить заявку">
                 </div>
             </form>
         </div>

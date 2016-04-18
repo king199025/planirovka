@@ -13,6 +13,7 @@ a.calculate_cost {
   width: 270px;
   margin: 0 auto;
   text-align: center;
+  text-transform: uppercase;
   font-family: $b;
   background: -moz-linear-gradient(270deg, rgba(254,0,0,1) 0%, rgba(186,3,3,1) 100%); /* ff3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(254,0,0,1)), color-stop(100%, rgba(186,3,3,1))); /* safari4+,chrome */
@@ -192,7 +193,7 @@ h2.name_how_works{
   }
 
   input[type="radio"] + label, input[type="checkbox"] + label {
-    font-size: 16px;
+    font-size: 14px;
     display: inline-block;
     font-weight: normal;
     color: #959595;
@@ -202,12 +203,20 @@ h2.name_how_works{
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    border: 1px solid #ccc;
+    height: 37px;
+    line-height: 37px;
+    vertical-align: middle;
     span {
       margin: 0;
-      border: 1px solid #ccc;
       padding: 5px;
       cursor: pointer;
-      display: block;
+      display: inline-block;
+      line-height:normal;
+      &.tipDiz{
+        font-size:12px;
+        text-align: center;
+      }
     }
   }
 }
@@ -217,4 +226,20 @@ input[type="radio"]:checked + label span, input[type="checkbox"]:checked + label
   color: #fff;
   
 }
+
+#text{
+  resize: none;
+  width: 100%;
+}
+
+.infoValue{
+  text-align: right;
+  font-family:$b;
+  span{
+    margin-right: 15px;
+    font-family:$mpr;
+  }
+}
+
+
 
