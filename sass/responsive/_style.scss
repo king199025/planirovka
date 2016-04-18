@@ -5,13 +5,19 @@
 @media only screen and (max-width: 980px) {
 	
 }
-
+/* tablet */
 @media only screen and (max-width: 770px) {
 	
 }
-
+/* iphone 6+ */
 @media only screen and (max-width: 736px) {
-	
+	#topnav{
+      height:auto;
+    }
+
+  #topnav ul{
+    height:auto;
+  }
 }
 
 @media only screen and (max-width: 500px) {

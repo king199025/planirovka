@@ -91,6 +91,8 @@ function add_styles() { // добавление стилей
     wp_enqueue_style( 'bs', get_template_directory_uri().'/css/bootstrap.min.css' ); // бутстрап
 	wp_enqueue_style( 'main', get_template_directory_uri().'/sass/style.css' ); // основные стили шаблона
 	wp_enqueue_style( 'fotorama', get_template_directory_uri() . '/css/fotorama.css', array('bs'), '1');
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css', array('bs'), '1');
+
 }
 
 function prn($content) {
