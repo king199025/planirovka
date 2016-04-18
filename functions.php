@@ -77,6 +77,7 @@ function add_scripts() { // добавление скриптов
     wp_enqueue_script('jquery','//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js','','',true); // добавляем свой
     wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js','','',true); // бутстрап
 	wp_enqueue_script( 'fotorama-js', get_template_directory_uri() . '/js/fotorama.js', array(), '1');
+	 wp_enqueue_script( 'slick-js', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js', array(), '1');
     wp_enqueue_script('main', get_template_directory_uri().'/js/main.js','','',true); // и скрипты шаблона
 	wp_localize_script('main', 'myajax',
 		array(
@@ -92,6 +93,8 @@ function add_styles() { // добавление стилей
 	wp_enqueue_style( 'main', get_template_directory_uri().'/sass/style.css' ); // основные стили шаблона
 	wp_enqueue_style( 'fotorama', get_template_directory_uri() . '/css/fotorama.css', array('bs'), '1');
 	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css', array('bs'), '1');
+	wp_enqueue_style( 'slick-css', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css', array(), '1');
+    wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/css/slick-theme.css', array(), '1');
 
 }
 

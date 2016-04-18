@@ -32,22 +32,22 @@ get_header(); // подключаем header.php ?>
 
 		<a href="#" class="calculate_cost">Расcчитать стоимость</a>
 
-		<div class="fotorama" data-navposition="top">
-            <div data-img="<?php bloginfo('template_directory'); ?>/img/img2.jpg">
+		<div class="main-carousel">
+           <!--  <div data-img="<?php bloginfo('template_directory'); ?>/img/img2.jpg">
                 <span class="caption_photo">Однокомнатная квартира, студия, 87 м2, стиль Лофт, светлая гамма</span>
             </div>
             <div data-img="<?php bloginfo('template_directory'); ?>/img/img2.jpg">
                 <span class="caption_photo">Однокомнатная квартира, студия, 87 м2, стиль Лофт, светлая гамма</span>
-            </div>
+            </div> -->
 
-            <!--<div class="sliderWr">
-                <img src="<?php /*bloginfo('template_directory'); */?>/img/img2.jpg">" alt="">
+            <div class="sliderWr">
+                <img src="<?php bloginfo('template_directory'); ?>/img/img2.jpg" alt="">
                 <span class="caption_photo">Однокомнатная квартира, студия, 87 м2, стиль Лофт, светлая гамма</span>
             </div>
             <div class="sliderWr">
-                <img src="<?php /*bloginfo('template_directory'); */?>/img/img1.jpg">" alt="">
+                <img src="<?php bloginfo('template_directory'); ?>/img/img1.jpg" alt="">
                 <span class="caption_photo">Еще текст</span>
-            </div>-->
+            </div>
 		</div>
 
 		<p class="decision">Дизайн-студии <span>не берутся за разработку</span> вашей квартиры из-за того

@@ -1,0 +1,30 @@
+.main-carousel {
+	float: left;
+	width: 100%;
+	margin: 25px 0;
+	ul.slick-dots {
+		top: 0;
+		li button {
+			background-color: $colorRed;
+			-webkit-border-radius: 50%;
+			        border-radius: 50%;
+			width: 10px;
+			height: 10px;
+			    &:before {
+			    	content: none;
+			    }
+		}
+		li.slick-active button {
+			background-color: #FFF;
+		}
+	}
+	.slick-slider-item.slick-slide.slick-active { 
+		outline: none; 
+	}
+	.slick-slider-item {
+		outline: none!important;     
+	}
+	:focus {
+		outline: none!important;
+	}
+}
