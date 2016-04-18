@@ -55,10 +55,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a href="#">text_1</a></li>
-                <li><a href="#">text_2</a></li>
-                <li><a href="#">text_3</a></li>
-                <li><a href="#">text_4</a></li>
+                <li><a href="#">Примеры работ</a></li>
+                <li><a href="#">Стоимость</a></li>
+                <li><a href="#">Ответы</a></li>
+                <li><a href="#">Контакты</a></li>
               </ul>
               <hr>
             </div><!-- /.navbar-collapse -->

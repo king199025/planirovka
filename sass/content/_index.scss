@@ -139,6 +139,7 @@ section.work_examples {
 
 .workInfoWr img{
   max-width: 100%;
+  width:100%;
 }
 
 .workDate {
@@ -150,6 +151,10 @@ section.work_examples {
 
 .workView {
   text-align: center;
+}
+
+.workView img{
+  width: 33px;
 }
 
 h2{
@@ -177,3 +182,34 @@ h2.name_how_works{
 .textReply{
   margin-bottom: 10px;
 }
+
+.input--line {
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"] + label {
+    font-size: 16px;
+    display: inline-block;
+    font-weight: normal;
+    color: #959595;
+    //text-transform: inherit;
+   
+    margin: 0 15px 0 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    span {
+      margin: 0;
+      border: 1px solid #ccc;
+      padding: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+input[type="radio"]:checked + label span{
+  background: $colorRed;
+  color: #fff;
+}
+

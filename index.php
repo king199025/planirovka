@@ -71,7 +71,7 @@ get_header(); // подключаем header.php ?>
 <section class="work_examples">
 	<div class="row">
 		<h2>Примеры работ</h2>
-		<div class="col-lg-4 col-md-4 p0">
+		<div class="col-lg-4 col-md-4 col-xs-6 p0">
 			<div class="workInfoWr">
 				<img src="<?php bloginfo('template_directory'); ?>/img/work1.jpg" alt="">
 				<div class="workInfo">
@@ -82,7 +82,7 @@ get_header(); // подключаем header.php ?>
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4 col-md-4 p0">
+		<div class="col-lg-4 col-md-4 col-xs-6 p0">
             <div class="workInfoWr">
                 <img src="<?php bloginfo('template_directory'); ?>/img/work2.jpg" alt="">
                 <div class="workInfo">
@@ -93,7 +93,7 @@ get_header(); // подключаем header.php ?>
                 </div>
             </div>
 		</div>
-		<div class="col-lg-4 col-md-4 p0">
+		<div class="col-lg-4 col-md-4 col-xs-6 p0">
             <div class="workInfoWr">
                 <img src="<?php bloginfo('template_directory'); ?>/img/work3.jpg" alt="">
                 <div class="workInfo">
@@ -104,7 +104,7 @@ get_header(); // подключаем header.php ?>
                 </div>
             </div>
 		</div>
-		<div class="col-lg-4 col-md-4 p0">
+		<div class="col-lg-4 col-md-4 col-xs-6 p0">
             <div class="workInfoWr">
                 <img src="<?php bloginfo('template_directory'); ?>/img/work4.jpg" alt="">
                 <div class="workInfo">
@@ -114,7 +114,7 @@ get_header(); // подключаем header.php ?>
                     <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
                 </div>
             </div></div>
-		<div class="col-lg-4 col-md-4 p0">
+		<div class="col-lg-4 col-md-4 col-xs-6 p0">
             <div class="workInfoWr">
                 <img src="<?php bloginfo('template_directory'); ?>/img/work5.jpg" alt="">
                 <div class="workInfo">
@@ -124,7 +124,7 @@ get_header(); // подключаем header.php ?>
                     <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
                 </div>
             </div></div>
-		<div class="col-lg-4 col-md-4 p0">
+		<div class="col-lg-4 col-md-4 col-xs-6 p0">
             <div class="workInfoWr">
                 <img src="<?php bloginfo('template_directory'); ?>/img/work1.jpg" alt="">
                 <div class="workInfo">
@@ -148,12 +148,35 @@ get_header(); // подключаем header.php ?>
         <h2><span class="red">Стоимость разработки</span> дизайна вашего помещения</h2>
         <div class="col-lg12">
             <form action="">
-                <span>Планировка</span>
-                <input type="radio" name="plan" value=""/> 10-20 м<sup>2</sup> - 2 уе/м<sup>2</sup>
-                <input type="radio" name="plan" value=""/> 21-55 м<sup>2</sup> - 1,75 уе/м<sup>2</sup>
-                <input type="radio" name="plan" value=""/> 56-120 м<sup>2</sup> - 1,5 уе/м<sup>2</sup>
-                <input type="radio" name="plan" value=""/> свыше 120 м<sup>2</sup> - 1 уе/м<sup>2</sup>
-                <input type="text" placeholder="Значение"/>
+                <div class="input--line">
+                    <span class="title">Планировка</span>
+                    <input type="radio" value="2" id="plan1" name="plan"/>
+                    <label for="plan1">
+                        <span>10-20 м<sup>2</sup> - 2 уе/м<sup>2</sup></span>
+                    </label>
+
+                    <input type="radio" value="1.75" id="plan2" name="plan"/>
+                    <label for="plan2">
+                        <span>21-55 м<sup>2</sup> - 1,75 уе/м<sup>2</sup></span>
+                    </label>
+
+                    <input type="radio" value="1.5" id="plan3" name="plan"/>
+                    <label for="plan3">
+                        <span>56-120 м<sup>2</sup> - 1,5 уе/м<sup>2</sup></span>
+                    </label>
+
+                    <input type="radio" value="1" id="plan4" name="plan"/>
+                    <label for="plan4">
+                        <span>свыше 120 м<sup>2</sup> - 1 уе/м<sup>2</sup></span>
+                    </label>
+
+
+
+                    <!--<input type="radio" name="plan" value=""/> 56-120 м<sup>2</sup> - 1,5 уе/м<sup>2</sup>
+                    <input type="radio" name="plan" value=""/> свыше 120 м<sup>2</sup> - 1 уе/м<sup>2</sup>-->
+                    <input type="text" placeholder="Значение"/>
+                </div>
+
                 <span>Электрические сети</span>
                 <input type="checkbox" name="electric_network"/>Розетки
                 <input type="checkbox" name="electric_network"/>Освещение выключатели

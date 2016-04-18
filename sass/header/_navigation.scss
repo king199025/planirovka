@@ -52,13 +52,22 @@
   margin:0 5px;
   height:30px
 }
-#topnav ul li a {
+.nav a {
   display:block;
   text-decoration:none;
   padding:4px 10px;
   color: #333333;
+  font-size: 24px;
+  &:hover, &:focus {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    color:$colorRed;
+  }
 }
-#topnav ul li a:hover {
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
@@ -91,7 +100,7 @@ ul.nav.navbar-nav {
         -ms-transform: translateY(-50%);
          -o-transform: translateY(-50%);
             transform: translateY(-50%);
-    background-color: $colorRed;
+    background-color: #333333;
     z-index: 0;
   }
 }
