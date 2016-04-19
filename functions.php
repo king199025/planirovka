@@ -5,6 +5,7 @@
  * @subpackage your-clean-template-3
  */
 
+
 define('TM_DIR', get_template_directory(__FILE__));
 define('TM_URL', get_template_directory_uri(__FILE__));
 
@@ -82,7 +83,8 @@ function add_scripts() { // добавление скриптов
     wp_enqueue_script('calculator', get_template_directory_uri().'/js/calculator.js','','',true); // и скрипты шаблона
 	wp_localize_script('main', 'myajax',
 		array(
-			'url' => admin_url('admin-ajax.php')
+			'url' => admin_url('admin-ajax.php'),
+			'act' => admin_url('admin-ajax.php')
 		)
 	);
 }
@@ -113,3 +115,131 @@ function content_class_by_sidebar() { // функция для вывода кл
 	}
 }
 
+
+/*--------------------------------------------- СЛАЙДЕР -------------------------------------------------------------*/
+add_action('init', 'customSlider');
+
+function customSlider()
+{
+	$labels = array(
+		'name' => 'Слайдер', // Основное название типа записи
+		'singular_name' => 'Слайдер', // отдельное название записи типа Book
+		'add_new' => 'Добавить слайд',
+		'add_new_item' => 'Добавить новый слайд',
+		'edit_item' => 'Редактировать слайд',
+		'new_item' => 'Новый слайд',
+		'view_item' => 'Посмотреть слайд',
+		'search_items' => 'Найти слайд',
+		'not_found' => 'Слайдов не найдено',
+		'not_found_in_trash' => 'В корзине слайдов не найдено',
+		'parent_item_colon' => '',
+		'menu_name' => 'Слайдер'
+
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'has_archive' => true,
+		'hierarchical' => false,
+		'menu_position' => null,
+		'supports' => array('title','thumbnail')
+	);
+	register_post_type('slider', $args);
+}
+
+function sliderShortcode()
+{
+	$args = array(
+		'post_type' => 'slider',
+		'post_status' => 'publish',
+		'posts_per_page' => -1);
+
+	$my_query = null;
+	$my_query = new WP_Query($args);
+
+	$parser = new Parser();
+	$parser->render(TM_DIR . '/views/slider.php', ['my_query' => $my_query]);
+}
+
+add_shortcode('slider', 'sliderShortcode');
+/*------------------------------------------ КОНЕЦ СЛАЙДЕР ---------------------------------------------------------*/
+
+/*--------------------------------------------- РАБОТЫ -------------------------------------------------------------*/
+add_action('init', 'customWork');
+
+function customWork()
+{
+	$labels = array(
+		'name' => 'Работы', // Основное название типа записи
+		'singular_name' => 'Работы', // отдельное название записи типа Book
+		'add_new' => 'Добавить работу',
+		'add_new_item' => 'Добавить новую работу',
+		'edit_item' => 'Редактировать работу',
+		'new_item' => 'Новая работа',
+		'view_item' => 'Посмотреть работы',
+		'search_items' => 'Найти работу',
+		'not_found' => 'Работ не найдено',
+		'not_found_in_trash' => 'В корзине работ не найдено',
+		'parent_item_colon' => '',
+		'menu_name' => 'Работы'
+
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'has_archive' => true,
+		'hierarchical' => false,
+		'menu_position' => null,
+		'supports' => array('title','thumbnail')
+	);
+	register_post_type('work', $args);
+}
+
+function workShortcode()
+{
+	$args = array(
+		'post_type' => 'work',
+		'post_status' => 'publish',
+		'posts_per_page' => 6);
+
+	$my_query = null;
+	$my_query = new WP_Query($args);
+
+	$parser = new Parser();
+	$parser->render(TM_DIR . '/views/work.php', ['my_query' => $my_query]);
+}
+
+add_shortcode('work', 'workShortcode');
+
+// AJAX ACTION
+add_action('wp_ajax_load_work', 'load_work');
+add_action('wp_ajax_nopriv_load_work', 'load_work');
+
+function load_work()
+{
+	$args = array(
+		'post_type' => 'work',
+		'paged' => $_POST['step'],
+		'post_status' => 'publish',
+		'posts_per_page' => 6);
+
+	$my_query = null;
+	$my_query = new WP_Query($args);
+
+	$parser = new Parser();
+	$parser->render(TM_DIR . '/views/load_work.php', ['my_query' => $my_query]);
+	wp_die();
+}
+/*------------------------------------------ КОНЕЦ РАБОТЫ ---------------------------------------------------------*/

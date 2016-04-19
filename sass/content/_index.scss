@@ -278,11 +278,28 @@ input[type="text"] {
   height: 37px;
 }
 
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   /* display: none; <- Crashes Chrome on hover */
   -webkit-appearance: none;
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+
+.custom_file_input_box {
+  position: relative;
+  &_btn {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    background-color: #00afea;
+    right: 0;
+    top: 0;
+  }
+  &_input {
+    opacity: 0;
+  }
 }
 
 
