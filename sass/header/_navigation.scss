@@ -104,3 +104,17 @@ ul.nav.navbar-nav {
     z-index: 0;
   }
 }
+
+.navigation {
+  position: relative;
+  @include transition(.4s);
+  &--onScroll {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: auto;
+    background-color: #FFF;
+    z-index: 999;
+  }  
+}

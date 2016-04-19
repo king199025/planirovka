@@ -11,7 +11,12 @@
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
         <div class="col-lg-4 col-md-4 col-xs-6 p0">
             <div class="workInfoWr">
-                <?php the_post_thumbnail('medium'); ?>
+                <!-- open .work--imagebox -->
+                <div class="work--imagebox">
+                    <?php the_post_thumbnail('full'); ?>
+                </div>
+                <!-- close .work--imagebox -->
+                
                 <div class="workInfo">
                     <div class="workTitle"><?php the_title(); ?></div>
                     <div class="workDate"><?= get_the_date('Y-m-d'); ?></div>

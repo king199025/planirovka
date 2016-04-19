@@ -31,27 +31,30 @@
 <div class="container">
 
         <header>
-            <div class="row">
-                <div class="col-xs-12">
-                    <a href="/"><img src="<?php bloginfo('template_directory'); ?>/img/logo.jpg" class="logo" alt=""></a>
+            
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="/"><img src="<?php bloginfo('template_directory'); ?>/img/logo.jpg" class="logo" alt=""></a>
 
-                                    
+                                        
+                    </div>
                 </div>
-            </div>
+          
         </header>
 
-        <nav class="navbar navbar-default" role="navigation">
-          <div class="container-fluid">
+        <nav class="navbar navbar-default navigation" role="navigation">
+         <div class="container">
+            <!-- open .row -->
+            <div class="row">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-            </div>
-
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
@@ -62,6 +65,8 @@
               </ul>
               <hr>
             </div><!-- /.navbar-collapse -->
+            </div>
+            <!-- close .row -->
           </div><!-- /.container-fluid -->
         </nav>
 

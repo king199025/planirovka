@@ -47,6 +47,15 @@ $(document).ready(function(){
         //return false;
     });
 
+    $(window).scroll(function () {
+        if (window.pageYOffset > 157) {
+            $(".navigation").addClass("navigation--onScroll");
+            //$(".header--onScroll").removeClass(".header");       
+        } else {
+            // $(".header--onScroll").addClass("header");
+            $(".navigation").removeClass("navigation--onScroll");
+        }
+    });
 });
 
  jQuery('.main-carousel').slick({
@@ -54,8 +63,9 @@ $(document).ready(function(){
     infinite: true,
     autoplay: true,
     focusOnSelect: false,
-    speed: 300,
+    speed: 3000,
     arrows: false,        
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    draggable: 1
 });

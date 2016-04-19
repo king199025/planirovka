@@ -4,6 +4,7 @@ $bl: 'QanelasBlack';
 $b: 'QanelasBold';
 $m: 'QanelasMedium';
 $mpr: 'MyriadProRegular';
+$r: 'QanelasRegular';
 
 @font-face {
     font-family: 'QanelasBlack';
@@ -50,6 +51,15 @@ $mpr: 'MyriadProRegular';
          url('../fonts/Qanelas/QanelasUltraLight.woff') format('woff'),
          url('../fonts/Qanelas/QanelasUltraLight.ttf') format('truetype'),
          url('../fonts/Qanelas/QanelasUltraLight.svg#QanelasUltraLight') format('svg');
+}
+@font-face {
+    font-family: 'QanelasRegular';
+    src: url('../fonts/Qanelas/Qanelas-Regular.eot');
+    src: url('../fonts/Qanelas/Qanelas-Regular.eot') format('embedded-opentype'),
+         url('../fonts/Qanelas/Qanelas-Regular.woff2') format('woff2'),
+         url('../fonts/Qanelas/Qanelas-Regular.woff') format('woff'),
+         url('../fonts/Qanelas/Qanelas-Regular.ttf') format('truetype'),
+         url('../fonts/Qanelas/Qanelas-Regular.svg#QanelasUltraLight') format('svg');
 }
 
 @font-face {
