@@ -23,7 +23,7 @@
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title><?php typical_title(); // выводи тайтл, функция лежит в functions.php ?></title>
+    <title><?php wp_get_document_title(); // выводи тайтл, функция лежит в functions.php ?></title>
     <?php wp_head(); // необходимо для работы плагинов и функционала ?>
 </head>
 <body <?php body_class(); // все классы для body ?>>
