@@ -126,9 +126,14 @@ get_header(); // подключаем header.php ?>
                     </div>
                     <textarea name="text" id="text" placeholder="Описание и Ваши пожелания" cols="30" rows="10"></textarea>
                 </div>
+
+                <input type="hidden" name="name" id="sendname">
+                <input type="hidden" name="phone" id="sendphone">
+                <input type="hidden" name="email" id="sendemail">
+
                 <div class="infoValue">
                     <span>Стоимость</span> <span class="sumValue">0</span>$
-                    <input type="submit" class="send_request" value="Отправить заявку">
+                    <input type="submit" class="send_request" data-toggle="modal" data-target="#myModal" value="Отправить заявку">
                 </div>
             </form>
         </div>
@@ -224,3 +229,42 @@ get_header(); // подключаем header.php ?>
 </section>
 
 <?php get_footer(); // подключаем footer.php ?>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <form action="">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Укажите контактные данные</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="control-group">
+                        <label class="control-label" for="name">Ваше имя</label>
+                        <div class="controls">
+                            <input type="text" name="name" id="name" class="formInput" placeholder="Ваше имя" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="email">Ваш email</label>
+                        <div class="controls">
+                            <input type="text" name="email" id="email" class="formInput" placeholder="Ваш email" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="phone">Ваш телефон</label>
+                        <div class="controls">
+                            <input type="text" name="phone" id="phone" class="formInput" placeholder="Ваш телефон" required>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="sendMail" value="Отправить заявку">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
