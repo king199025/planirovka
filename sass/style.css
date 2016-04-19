@@ -432,6 +432,13 @@ input[type="radio"]:checked + label span, input[type="checkbox"]:checked + label
 input[type="text"] {
   height: 37px; }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */ }
+
 footer {
   background: #3b3b3b;
   padding: 60px 0;

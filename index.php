@@ -163,22 +163,22 @@ get_header(); // подключаем header.php ?>
             <form action="">
                 <div class="input--line">
                     <span class="title">Планировка</span>
-                    <input type="radio" value="2" id="plan1" class="calculator plan" name="plan"/>
+                    <input type="radio" value="2" id="plan1" class="calculator plan" data-type="1" name="plan"/>
                     <label for="plan1">
                         <span>10-20 м<sup>2</sup> - 2 уе/м<sup>2</sup></span>
                     </label>
 
-                    <input type="radio" value="1.75" id="plan2" class="calculator plan" name="plan"/>
+                    <input type="radio" value="1.75" id="plan2" class="calculator plan" data-type="2" name="plan"/>
                     <label for="plan2">
                         <span>21-55 м<sup>2</sup> - 1,75 уе/м<sup>2</sup></span>
                     </label>
 
-                    <input type="radio" value="1.5" id="plan3" class="calculator plan" name="plan"/>
+                    <input type="radio" value="1.5" id="plan3" class="calculator plan" data-type="3" name="plan"/>
                     <label for="plan3">
                         <span>56-120 м<sup>2</sup> - 1,5 уе/м<sup>2</sup></span>
                     </label>
 
-                    <input type="radio" value="1" id="plan4" class="calculator plan" name="plan"/>
+                    <input type="radio" value="1" id="plan4" class="calculator plan" data-type="4" name="plan"/>
                     <label for="plan4">
                         <span>свыше 120 м<sup>2</sup> - 1 уе/м<sup>2</sup></span>
                     </label>
@@ -188,32 +188,32 @@ get_header(); // подключаем header.php ?>
                 
                 <div class="input--line">
                     <span>Электрические сети</span>
-                    <input type="checkbox" id="roz" class="calculator" name="electric_network"/>
+                    <input type="checkbox" id="roz" class="calculator kooff" data-kooff="0.5" name="electric_network"/>
                         <label for="roz"><span>Розетки</span></label>
-                    <input type="checkbox" id="osv" class="calculator" name="electric_network"/>
+                    <input type="checkbox" id="osv" class="calculator kooff" data-kooff="0.6" name="electric_network"/>
                         <label for="osv"><span>Освещение выключатели</span></label>
-                    <input type="checkbox" id="pol" class="calculator" name="electric_network"/>
+                    <input type="checkbox" id="pol" class="calculator kooff" data-kooff="0.7" name="electric_network"/>
                     <label for="pol"><span>Теплый пол</span></label>
                 </div>
                 <div class="input--line">
                     <span>Ваная комната</span>
-                    <input type="checkbox" id="oborud" class="calculator" name="bathroom"/>
+                    <input type="checkbox" id="oborud" class="calculator kooff" data-kooff="0.8" name="bathroom"/>
                         <label for="oborud"><span>Привязки оборудования</span></label>
-                    <input type="checkbox" id="plitka" class="calculator" name="bathroom"/>
+                    <input type="checkbox" id="plitka" class="calculator kooff" data-kooff="0.9" name="bathroom"/>
                         <label for="plitka"><span>Раскладка плитки</span></label>
                 </div>
                 <div class="input--line">
                     <span>Советы дизайнера</span>
-                    <input type="checkbox" name="tip" class="calculator" id="otdmat"/><label for="otdmat"><span class="tipDiz">Спецификация отделочных <br>материалов</span></label>
-                    <input type="checkbox" name="tip" class="calculator" id="osvobor"/><label for="osvobor"><span class="tipDiz">Спецификация осветительного <br>оборудования</span></label>
-                    <input type="checkbox" name="tip" class="calculator" id="santex"/><label for="santex"><span>Спецификация сантехники</span></label>
-                    <input type="checkbox" name="tip" class="calculator" id="mebel"/><label for="mebel"><span>Спецификация мебели</span></label>
+                    <input type="checkbox" name="tip" class="calculator plus" data-plus="100" id="otdmat"/><label for="otdmat"><span class="tipDiz">Спецификация отделочных <br>материалов</span></label>
+                    <input type="checkbox" name="tip" class="calculator plus" data-plus="110" id="osvobor"/><label for="osvobor"><span class="tipDiz">Спецификация осветительного <br>оборудования</span></label>
+                    <input type="checkbox" name="tip" class="calculator plus" data-plus="120" id="santex"/><label for="santex"><span>Спецификация сантехники</span></label>
+                    <input type="checkbox" name="tip" class="calculator plus" data-plus="130" id="mebel"/><label for="mebel"><span>Спецификация мебели</span></label>
                 </div>
                 <div class="input--line">
                     <textarea name="text" id="text" placeholder="Описание и Ваши пожелания" cols="30" rows="10"></textarea>
                 </div>
                 <div class="infoValue">
-                    <span>Стоимость</span> 26000$
+                    <span>Стоимость</span> <span class="sumValue">0</span>$
                     <input type="submit" class="send_request" value="Отправить заявку">
                 </div>
             </form>
