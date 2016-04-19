@@ -36,7 +36,7 @@ function endSum(){
             }
         });
 
-        $('.sumValue').html(sum);
+        $('.sumValue').html(Math.round(sum));
 
     },1);
     //Получение значения планировки

@@ -19,16 +19,31 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.sendMail', function(){
-
-        var name = $('#name').val();
-        var phone = $('#phone').val();
-        var email = $('#email').val();
-        $('#sendname').val(name);
-        $('#sendphone').val(phone);
-        $('#sendemail').val(email);
         event.preventDefault();
+        var flag;
+        $('.formInput').each(function(){
+            if($(this).val() == ''){
+                 flag = 0;
+                return false;
+            }
+            else{
+                flag = 1;
+            }
+        });
 
-        $('#myModal').modal('hide');
+        if(flag == 0){
+            alert('введены не все поля')
+        }else{
+            var name = $('#name').val();
+            var phone = $('#phone').val();
+            var email = $('#email').val();
+            $('#sendname').val(name);
+            $('#sendphone').val(phone);
+            $('#sendemail').val(email);
+
+
+            $('#myModal').modal('hide');
+        }
         //return false;
     });
 
