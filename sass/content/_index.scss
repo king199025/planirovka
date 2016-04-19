@@ -252,6 +252,7 @@ input[type="radio"]:checked + label span, input[type="checkbox"]:checked + label
 #text{
   resize: none;
   width: 100%;
+  padding: 15px;
 }
 
 .infoValue{
@@ -263,7 +264,7 @@ input[type="radio"]:checked + label span, input[type="checkbox"]:checked + label
   }
 }
 
-.send_request{
+.send_request,.send{
   background: #8dc63f;
   border: none;
   padding: 9px;
@@ -278,13 +279,26 @@ input[type="text"] {
   height: 37px;
 }
 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+
 .custom_file_input_box {
   position: relative;
   &_btn {
     position: absolute;
-    width: 100px;
+    padding: 15px;
+    width: 155px;
+    font-size:12px;
+    font-style: italic;
+    color: #959595;
     height: 30px;
-    background-color: #00afea;
+    background: url("../img/file.png") no-repeat 50% 96%;
     right: 0;
     top: 0;
   }
@@ -293,3 +307,18 @@ input[type="text"] {
   }
 }
 
+span.sumValue{
+  margin: 0;
+  font-family:$b;
+}
+
+.control-group label{
+  float:left;
+  margin-right: 17px;
+  margin-top: 16px;
+}
+
+.formInput{
+  height: auto;
+  width: 100%;
+}

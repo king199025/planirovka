@@ -12,6 +12,26 @@ $(document).ready(function(){
             }
         });
     });
+
+    $(document).on('click', '.send_request', function(){
+        event.preventDefault();
+        $('#myModal').modal('show');
+    });
+
+    $(document).on('click', '.sendMail', function(){
+
+        var name = $('#name').val();
+        var phone = $('#phone').val();
+        var email = $('#email').val();
+        $('#sendname').val(name);
+        $('#sendphone').val(phone);
+        $('#sendemail').val(email);
+        event.preventDefault();
+
+        $('#myModal').modal('hide');
+        //return false;
+    });
+
 });
 
  jQuery('.main-carousel').slick({
