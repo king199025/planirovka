@@ -278,4 +278,18 @@ input[type="text"] {
   height: 37px;
 }
 
+.custom_file_input_box {
+  position: relative;
+  &_btn {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    background-color: #00afea;
+    right: 0;
+    top: 0;
+  }
+  &_input {
+    opacity: 0;
+  }
+}
 

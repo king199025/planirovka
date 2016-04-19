@@ -32,23 +32,7 @@ get_header(); // подключаем header.php ?>
 
 		<a href="#" class="calculate_cost">Расcчитать стоимость</a>
 
-		<div class="main-carousel">
-           <!--  <div data-img="<?php bloginfo('template_directory'); ?>/img/img2.jpg">
-                <span class="caption_photo">Однокомнатная квартира, студия, 87 м2, стиль Лофт, светлая гамма</span>
-            </div>
-            <div data-img="<?php bloginfo('template_directory'); ?>/img/img2.jpg">
-                <span class="caption_photo">Однокомнатная квартира, студия, 87 м2, стиль Лофт, светлая гамма</span>
-            </div> -->
-
-            <div class="sliderWr">
-                <img src="<?php bloginfo('template_directory'); ?>/img/img2.jpg" alt="">
-                <span class="caption_photo">Однокомнатная квартира, студия, 87 м2, стиль Лофт, светлая гамма</span>
-            </div>
-            <div class="sliderWr">
-                <img src="<?php bloginfo('template_directory'); ?>/img/img1.jpg" alt="">
-                <span class="caption_photo">Еще текст</span>
-            </div>
-		</div>
+		<?= do_shortcode('[slider]') ?>
 
 		<p class="decision">Дизайн-студии <span>не берутся за разработку</span> вашей квартиры из-за того
 			что у нее маленькие <span>размеры/маленький бюджет</span>? А вы сами
@@ -81,80 +65,7 @@ get_header(); // подключаем header.php ?>
 	</div>
 </section>
 
-<section class="work_examples">
-	<div class="row">
-		<h2>Примеры работ</h2>
-		<div class="col-lg-4 col-md-4 col-xs-6 p0">
-			<div class="workInfoWr">
-				<img src="<?php bloginfo('template_directory'); ?>/img/work1.jpg" alt="">
-				<div class="workInfo">
-					<div class="workTitle">Квартира25</div>
-					<div class="workDate">25 апреля, 2016 </div>
-					<div class="workLine"></div>
-					<div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-4 col-md-4 col-xs-6 p0">
-            <div class="workInfoWr">
-                <img src="<?php bloginfo('template_directory'); ?>/img/work2.jpg" alt="">
-                <div class="workInfo">
-                    <div class="workTitle">Квартира25</div>
-                    <div class="workDate">25 апреля, 2016 </div>
-                    <div class="workLine"></div>
-                    <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
-                </div>
-            </div>
-		</div>
-		<div class="col-lg-4 col-md-4 col-xs-6 p0">
-            <div class="workInfoWr">
-                <img src="<?php bloginfo('template_directory'); ?>/img/work3.jpg" alt="">
-                <div class="workInfo">
-                    <div class="workTitle">Квартира25</div>
-                    <div class="workDate">25 апреля, 2016 </div>
-                    <div class="workLine"></div>
-                    <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
-                </div>
-            </div>
-		</div>
-		<div class="col-lg-4 col-md-4 col-xs-6 p0">
-            <div class="workInfoWr">
-                <img src="<?php bloginfo('template_directory'); ?>/img/work4.jpg" alt="">
-                <div class="workInfo">
-                    <div class="workTitle">Квартира25</div>
-                    <div class="workDate">25 апреля, 2016 </div>
-                    <div class="workLine"></div>
-                    <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
-                </div>
-            </div></div>
-		<div class="col-lg-4 col-md-4 col-xs-6 p0">
-            <div class="workInfoWr">
-                <img src="<?php bloginfo('template_directory'); ?>/img/work5.jpg" alt="">
-                <div class="workInfo">
-                    <div class="workTitle">Квартира25</div>
-                    <div class="workDate">25 апреля, 2016 </div>
-                    <div class="workLine"></div>
-                    <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
-                </div>
-            </div></div>
-		<div class="col-lg-4 col-md-4 col-xs-6 p0">
-            <div class="workInfoWr">
-                <img src="<?php bloginfo('template_directory'); ?>/img/work1.jpg" alt="">
-                <div class="workInfo">
-                    <div class="workTitle">Квартира25</div>
-                    <div class="workDate">25 апреля, 2016 </div>
-                    <div class="workLine"></div>
-                    <div class="workView"><img src="<?php bloginfo('template_directory'); ?>/img/view.png" alt=""></div>
-                </div>
-            </div>
-		</div>
-        
-        <div class="load_more">
-            <img src="<?php bloginfo('template_directory'); ?>/img/load_more.png" alt=""/>
-        </div>
-        
-	</div>
-</section>
+<?= do_shortcode('[work]'); ?>
 
 <section class="value_work">
     <div class="row">
@@ -209,7 +120,10 @@ get_header(); // подключаем header.php ?>
                     <input type="checkbox" name="tip" class="calculator" id="santex"/><label for="santex"><span>Спецификация сантехники</span></label>
                     <input type="checkbox" name="tip" class="calculator" id="mebel"/><label for="mebel"><span>Спецификация мебели</span></label>
                 </div>
-                <div class="input--line">
+                <div class="input--line custom_file_input_box">
+                    <div class="custom_file_input_box_btn">
+                        <input type="file" class="custom_file_input_box_input">
+                    </div>
                     <textarea name="text" id="text" placeholder="Описание и Ваши пожелания" cols="30" rows="10"></textarea>
                 </div>
                 <div class="infoValue">

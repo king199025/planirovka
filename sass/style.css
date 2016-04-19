@@ -432,6 +432,18 @@ input[type="radio"]:checked + label span, input[type="checkbox"]:checked + label
 input[type="text"] {
   height: 37px; }
 
+.custom_file_input_box {
+  position: relative; }
+  .custom_file_input_box_btn {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    background-color: #00afea;
+    right: 0;
+    top: 0; }
+  .custom_file_input_box_input {
+    opacity: 0; }
+
 footer {
   background: #3b3b3b;
   padding: 60px 0;
