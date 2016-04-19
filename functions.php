@@ -79,6 +79,7 @@ function add_scripts() { // добавление скриптов
 	wp_enqueue_script( 'fotorama-js', get_template_directory_uri() . '/js/fotorama.js', array(), '1');
 	 wp_enqueue_script( 'slick-js', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js', array(), '1');
     wp_enqueue_script('main', get_template_directory_uri().'/js/main.js','','',true); // и скрипты шаблона
+    wp_enqueue_script('calculator', get_template_directory_uri().'/js/calculator.js','','',true); // и скрипты шаблона
 	wp_localize_script('main', 'myajax',
 		array(
 			'url' => admin_url('admin-ajax.php')

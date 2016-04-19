@@ -30,10 +30,18 @@ a.calculate_cost {
   margin-top:15px;
   padding: 5px;
   text-shadow: 1px 1px 3px $baseColor;
+  margin-bottom: 40px;
 }
 
 a.calculate_cost:hover{
   text-decoration:none;
+  background: -moz-linear-gradient(270deg, rgba(169,168,168,1) 0%, rgba(97,96,96,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(169,168,168,1)), color-stop(100%, rgba(97,96,96,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(270deg, rgba(169,168,168,1) 0%, rgba(97,96,96,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(270deg, rgba(169,168,168,1) 0%, rgba(97,96,96,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(270deg, rgba(169,168,168,1) 0%, rgba(97,96,96,1) 100%); /* ie10+ */
+  background: linear-gradient(180deg, rgba(169,168,168,1) 0%, rgba(97,96,96,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9a8a8', endColorstr='#616060',GradientType=0 ); /* ie6-9 */
 }
 
 
@@ -44,12 +52,23 @@ a.calculate_cost:hover{
     width: 752px;
     margin: 0 auto;
     font-family: $l;
+    margin-bottom:35px
   }
 
   h1.topic{
     text-align: center;
     width: 600px;
     margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  section.how_works{
+    padding-top:50px;
+    padding-bottom:50px;
+  }
+
+  .reply{
+    padding: 30px 0;
   }
 }
 
@@ -119,6 +138,7 @@ section.work_examples {
 }
 .imgDesc{
   max-width: 100%;
+  margin-botton:25px;
 }
 
 .workTitle {
@@ -161,6 +181,7 @@ section.work_examples {
 h2{
   text-align: center;
   font-family: $b;
+  padding-bottom: 35px;
 }
 
 h2.name_how_works{
@@ -172,7 +193,7 @@ h2.name_how_works{
   width: 100%;
   float: left;
   text-align: center;
-  margin: 15px 0;
+  margin: 30px 0;
   cursor: pointer
 }
 
@@ -224,6 +245,7 @@ h2.name_how_works{
 input[type="radio"]:checked + label span, input[type="checkbox"]:checked + label span{
   background: $colorRed;
   color: #fff;
+  padding: 10px 5px;
   
 }
 
@@ -241,5 +263,19 @@ input[type="radio"]:checked + label span, input[type="checkbox"]:checked + label
   }
 }
 
+.send_request{
+  background: #8dc63f;
+  border: none;
+  padding: 9px;
+  color: #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-left: 15px;
+  outline: none;
+}
+
+input[type="text"] {
+  height: 37px;
+}
 
 
