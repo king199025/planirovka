@@ -129,7 +129,7 @@ get_header(); // подключаем header.php ?>
                 </div>
                 <div class="input--line custom_file_input_box">
                     <div class="custom_file_input_box_btn">
-                        <input type="file" class="custom_file_input_box_input" name="uploadfile" accept="image/*, application/pdf">
+                        <input type="file" class="custom_file_input_box_input" name="uploadfile" accept="image/*, application/pdf" multiple>
                     </div>
                     <textarea name="text" id="text" placeholder="Описание и Ваши пожелания" cols="30" rows="10"></textarea>
                     <div class="selected_file"></div>
