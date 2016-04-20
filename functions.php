@@ -315,7 +315,7 @@ function admin_add_order()
 // Копируем файл из каталога для временного хранения файлов:
         if (copy($_FILES['uploadfile']['tmp_name'], $uploadfile)) {
             $k = wp_mail($mailadmin, "Заявка с вашего сайта", $text, $headers, $uploadfile);
-            
+
         }
     } else {
         wp_mail($mailadmin, "Заявка с вашего сайта", $text, $headers);
