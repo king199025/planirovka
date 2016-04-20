@@ -15,9 +15,7 @@ function endSum(){
         var planZnachenie = parseFloat($('.planZnachenie').val());
         var plan = parseFloat($('input[name="plan"]:checked').val());
         var square = planZnachenie*plan;
-        //console.log(plan);
-       // console.log(planZnachenie);
-       // console.log(square);
+
         //проверяю какие чекбоксы нажаты и получаю их кооффициет
         sum += square;
         $('.kooff').each(function(){
@@ -39,22 +37,15 @@ function endSum(){
         $('.sumValue').html(Math.round(sum));
 
     },1);
-    //Получение значения планировки
 
-    //alert(plan);
-    //alert(123);
 }
 
 $(document).ready(function(){
-
-
-
-
-
     $(document).on('click','.calculator', function(){
-
         endSum();
-
+    });
+    $(document).on('change', '.planZnachenie', function(){
+        endSum();
     });
 
     $(document).on('click','.plan', function(){

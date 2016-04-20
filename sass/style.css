@@ -437,11 +437,11 @@ h2.name_how_works {
     -ms-user-select: none;
     border: 1px solid #ccc;
     height: 37px;
-    line-height: 37px;
-    vertical-align: middle; }
+    line-height: 25px;
+    vertical-align: middle;
+    padding: 5px; }
     .input--line input[type="radio"] + label span, .input--line input[type="checkbox"] + label span {
       margin: 0;
-      padding: 5px;
       cursor: pointer;
       display: inline-block;
       line-height: normal; }
@@ -451,8 +451,7 @@ h2.name_how_works {
 
 input[type="radio"]:checked + label span, input[type="checkbox"]:checked + label span {
   background: #f70000;
-  color: #fff;
-  padding: 5px; }
+  color: #fff; }
 
 input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
   background: #f70000; }
@@ -469,7 +468,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
     margin-right: 15px;
     font-family: "MyriadProRegular"; }
 
-.send_request, .send {
+.send_request, .sendMail {
   background: #8dc63f;
   border: none;
   padding: 9px;
@@ -517,6 +516,10 @@ span.sumValue {
 .formInput {
   height: auto;
   width: 100%; }
+
+.contacts__map {
+  height: 260px;
+  margin-top: 50px; }
 
 footer {
   background: #3b3b3b;

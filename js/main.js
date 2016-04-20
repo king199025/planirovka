@@ -1,4 +1,24 @@
 $(document).ready(function(){
+
+    jQuery("a.lb").lightBox();
+
+
+    $(".navbar").on("click","a", function (event) {
+        //отменяем стандартную обработку нажатия по ссылке
+        event.preventDefault();
+
+        //забираем идентификатор бока с атрибута href
+        var id  = $(this).attr('href'),
+
+        //узнаем высоту от начала страницы до блока на который ссылается якорь
+            top = $(id).offset().top;
+
+        //анимируем переход на расстояние - top за 1500 мс
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
+
+
+
     $('.load_more').on('click', function(){
         var step = $(this).attr('data-step');
         $.ajax({
@@ -44,6 +64,8 @@ $(document).ready(function(){
 
             $('#myModal').modal('hide');
         }
+
+        $('#sendForm').submit();
         //return false;
     });
 
@@ -56,6 +78,9 @@ $(document).ready(function(){
             $(".navigation").removeClass("navigation--onScroll");
         }
     });
+
+
+
 });
 
  jQuery('.main-carousel').slick({
@@ -69,3 +94,34 @@ $(document).ready(function(){
     slidesToScroll: 1,
     draggable: 1
 });
+
+
+ymaps.ready(init);
+
+function init() {
+    var myMap = new ymaps.Map('map', {
+        center: [55.795962, 38.450751],
+        zoom: 16,
+        controls: [],
+
+    }) ;
+    myGeoObject = new ymaps.GeoObject({
+// Описание геометрии.
+        geometry: {
+            type: "Point",
+            coordinates: [55.795862, 38.444955]
+        },
+// Свойства.
+        properties: {
+// Контент метки.
+            preset: 'islands#icon',
+            iconColor: '#0095b6'
+        }
+    });
+
+    myMap.behaviors.disable('scrollZoom');
+
+    myMap.geoObjects
+        .add(myGeoObject);
+}
+

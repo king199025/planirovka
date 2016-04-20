@@ -25,6 +25,8 @@
     <![endif]-->
     <title><?php wp_get_document_title(); // выводи тайтл, функция лежит в functions.php ?></title>
     <?php wp_head(); // необходимо для работы плагинов и функционала ?>
+
+
 </head>
 <body <?php body_class(); // все классы для body ?>>
 
@@ -58,10 +60,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a href="#">Примеры работ</a></li>
-                <li><a href="#">Стоимость</a></li>
-                <li><a href="#">Ответы</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="#work_examples">Примеры работ</a></li>
+                <li><a href="#value_work">Стоимость</a></li>
+                <li><a href="#reply">Ответы</a></li>
+                <li><a href="#footer">Контакты</a></li>
               </ul>
               <hr>
             </div><!-- /.navbar-collapse -->

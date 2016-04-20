@@ -61,17 +61,19 @@ get_header(); // подключаем header.php ?>
 		</div>
 		<div class="col-lg-7">
 			<img src="<?php bloginfo('template_directory'); ?>/img/how_works.png" alt="">
+
 		</div>
 	</div>
+
 </section>
 
 <?= do_shortcode('[work]'); ?>
 
-<section class="value_work">
+<section class="value_work" id="value_work">
     <div class="row">
         <h2><span class="red">Стоимость разработки</span> дизайна вашего помещения</h2>
         <div class="col-lg12">
-            <form action="">
+            <form action="<?= get_bloginfo('url'); ?>/wp-admin/admin-post.php?action=add_order" method="POST" id="sendForm">
                 <div class="input--line">
                     <span class="title">Планировка</span>
                     <input type="radio" value="2" id="plan1" class="calculator plan" data-type="1" name="plan"/>
@@ -140,7 +142,7 @@ get_header(); // подключаем header.php ?>
     </div>
 </section>
 
-<section class="reply">
+<section class="reply" id="reply">
     <div class="row">
         <h2><span class="red">Ответы</span>  на частозадаваемые вопросы</h2>
         <div class="col-md-6">

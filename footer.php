@@ -25,7 +25,7 @@
 
 </div>
 
-<footer>
+<footer id="footer">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
@@ -78,7 +78,11 @@
 				</div>
 
 			</div>
-			<div class="col-md-8"></div>
+			<div class="col-md-8">
+				<article class="contacts__map">
+					<div id="map" style="width:100%; height:100%"></div>
+				</article>
+			</div>
 		</div>
 	</div>
 </footer>
