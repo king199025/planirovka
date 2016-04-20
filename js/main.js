@@ -94,12 +94,19 @@ $(document).ready(function () {
 
 
     $('.custom_file_input_box_input').blur(function () {
-        var file = $('.custom_file_input_box_input').val()
-        if(file == ''){
+        //var file = $('.custom_file_input_box_input').val();
+        var file = document.getElementById('custom_file').files;
+
+        var l = file.length;
+        if(file.length == 0){
             $('.selected_file').html('Файл не выбран');
         }
         else {
-            $('.selected_file').html('Выбран файл: ' + file);
+            var name = '';
+            for(var i=0; i<l; i++){
+                name = name + file[i].name + ', ';
+            }
+            $('.selected_file').html('Файлы: ' + name.slice(0, -1));
         }
     });
 
