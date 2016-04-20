@@ -87,6 +87,9 @@ footer, header, section, nav, .infoValue {
   .main-carousel .sliderWr span.caption_photo {
     margin-top: 30px; }
 
+#lightbox-container-image-data-box, #lightbox-container-image-box {
+  max-width: 90% !important; }
+
 .navbar-default {
   background-color: #fff;
   border-color: #fff; }
@@ -393,7 +396,7 @@ section.work_examples {
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
   .work--imagebox img {
-    max-width: 150%; }
+    max-width: 120%; }
 
 .workView img {
   width: 33px; }
@@ -573,7 +576,13 @@ footer a:hover {
     width: 100%;
     margin: 10px 0; }
     .input--line input[type="radio"] + label span, .input--line input[type="checkbox"] + label span {
-      display: inline-block; } }
+      display: inline-block; }
+
+  .work--imagebox {
+    height: 160px; } }
+@media only screen and (max-width: 320px) {
+  .work--imagebox {
+    height: 140px; } }
 @media (min-width: 1200px) {
   .container {
     width: 960px; } }

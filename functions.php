@@ -109,7 +109,7 @@ function add_styles()
     wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css', array('bs'), '1');
     wp_enqueue_style('slick-css', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css', array(), '1');
     wp_enqueue_style('slick-theme', get_template_directory_uri() . '/css/slick-theme.css', array(), '1');
-    wp_enqueue_style('lightbox-css', get_template_directory_uri() . '/css/jquery.lightbox-0.5', array(), '1');
+    wp_enqueue_style('lightbox-css', get_template_directory_uri() . '/css/jquery.lightbox-0.5.css', array(), '1');
 
 }
 
@@ -304,19 +304,24 @@ function admin_add_order()
     $mailadmin = get_option('admin_email');
     $text = $parser->render(TM_DIR . '/views/mail_text.php', ['post' => $_POST], false);
     //prn($mailadmin);
-    $headers[] = 'From: Сайт wordpress@flat.art-craft.tk';
+    /*$headers[] = 'From: Сайт wordpress@flat.art-craft.tk';*/
     $headers[] = "Content-type: text/html;";
 
-
-    if (isset($_FILES['uploadfile']['name'])) {
+//prn($_FILES);
+    if (isset($_FILES['uploadfile']['name']['0'])) {
+        $dirFile = [];
+        $i = 0;
         $uploaddir = TM_DIR . '/files/';
-        $uploadfile = $uploaddir . basename($_FILES['uploadfile']['name']);
+        foreach ($_FILES['uploadfile']['name'] as $item) {
+            $uploadfile = $uploaddir . basename($item);
+            $dirFile[] = $uploadfile;
 
-// Копируем файл из каталога для временного хранения файлов:
-        if (copy($_FILES['uploadfile']['tmp_name'], $uploadfile)) {
-            $k = wp_mail($mailadmin, "Заявка с вашего сайта", $text, $headers, $uploadfile);
-
+            copy($_FILES['uploadfile']['tmp_name'][$i], $uploadfile);
+            $i++;
         }
+
+        $k = wp_mail($mailadmin, "Заявка с вашего сайта", $text, $headers, $dirFile);
+
     } else {
         wp_mail($mailadmin, "Заявка с вашего сайта", $text, $headers);
     }
@@ -327,8 +332,8 @@ function admin_add_order()
     //prn($text);
 
 // Handle request then generate response using echo or leaving PHP and using HTML
-    /*header("HTTP/1.1 301 Moved Permanently");
+    header("HTTP/1.1 301 Moved Permanently");
     header("Location: ".get_bloginfo('url'));
-    exit();*/
+    exit();
 
 }

@@ -15,7 +15,7 @@
                     <!-- open .work--imagebox -->
                     <div class="work--imagebox">
 
-                        <?php the_post_thumbnail('full'); ?>
+                        <?php the_post_thumbnail(array('100%', '100%')); ?>
                     </div>
                     <!-- close .work--imagebox -->
 
