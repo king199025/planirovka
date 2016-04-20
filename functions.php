@@ -260,14 +260,35 @@ add_action( 'admin_post_nopriv_add_order', 'admin_add_order' );
 function admin_add_order() {
 	$parser = new Parser();
 	$mailadmin = get_option('admin_email');
-	$text = $parser->render(TM_DIR . '/views/mail_text.php', ['post' => $_POST]);
+	$text = $parser->render(TM_DIR . '/views/mail_text.php', ['post' => $_POST], false);
 	//prn($mailadmin);
-	//mail($mailadmin, "Заявка с вашего сайта", "Line 1\nLine 2\nLine 3");
+
+	$headers = "Content-type: text/html;";
+
+
+	mail($mailadmin, "Заявка с вашего сайта", $text,$headers);
+if(isset($_FILES['uploadfile']['name'])){
+	$uploaddir = TM_DIR . '/files/';
+	$uploadfile = $uploaddir.basename($_FILES['uploadfile']['name']);
+
+// Копируем файл из каталога для временного хранения файлов:
+	if (copy($_FILES['uploadfile']['tmp_name'], $uploadfile))
+	{
+		wp_mail( $mailadmin, "Заявка с вашего сайта", $text, $headers, $uploadfile );
+	}
+}
+	else{
+		wp_mail( $mailadmin, "Заявка с вашего сайта", $text, $headers );
+	}
+
+
+
+
 	//prn($text);
 
 // Handle request then generate response using echo or leaving PHP and using HTML
-		/*header("HTTP/1.1 301 Moved Permanently");
+		header("HTTP/1.1 301 Moved Permanently");
 		header("Location: ".get_bloginfo('url'));
-		exit();*/
+		exit();
 
 }

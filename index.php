@@ -110,22 +110,26 @@ get_header(); // подключаем header.php ?>
                 </div>
                 <div class="input--line">
                     <span>Ваная комната</span>
-                    <input type="checkbox" id="oborud" class="calculator kooff" data-kooff="0.8" name="bathroom"/>
+                    <input type="checkbox" id="oborud" class="calculator kooff" data-kooff="0.8" name="bathroom[]" value="Привязки оборудования"/>
                         <label for="oborud"><span>Привязки оборудования</span></label>
-                    <input type="checkbox" id="plitka" class="calculator kooff" data-kooff="0.9" name="bathroom"/>
+                    <input type="checkbox" id="plitka" class="calculator kooff" data-kooff="0.9" name="bathroom[]" value="Раскладка плитки"/>
                         <label for="plitka"><span>Раскладка плитки</span></label>
                 </div>
                 <input type="hidden" name="summa" id="summa">
                 <div class="input--line">
                     <span>Советы дизайнера</span>
-                    <input type="checkbox" name="tip" class="calculator plus" data-plus="100" id="otdmat"/><label for="otdmat"><span class="tipDiz">Спецификация отделочных <br>материалов</span></label>
-                    <input type="checkbox" name="tip" class="calculator plus" data-plus="110" id="osvobor"/><label for="osvobor"><span class="tipDiz">Спецификация осветительного <br>оборудования</span></label>
-                    <input type="checkbox" name="tip" class="calculator plus" data-plus="120" id="santex"/><label for="santex"><span>Спецификация сантехники</span></label>
-                    <input type="checkbox" name="tip" class="calculator plus" data-plus="130" id="mebel"/><label for="mebel"><span>Спецификация мебели</span></label>
+                    <input type="checkbox" name="tip[]" class="calculator plus" data-plus="100" id="otdmat" value="Спецификация отделочных материалов"/>
+                        <label for="otdmat"><span class="tipDiz">Спецификация отделочных <br>материалов</span></label>
+                    <input type="checkbox" name="tip[]" class="calculator plus" data-plus="110" id="osvobor" value="Спецификация осветительного оборудования"/>
+                        <label for="osvobor"><span class="tipDiz">Спецификация осветительного <br>оборудования</span></label>
+                    <input type="checkbox" name="tip[]" class="calculator plus" data-plus="120" id="santex" value="Спецификация сантехники"/>
+                        <label for="santex"><span>Спецификация сантехники</span></label>
+                    <input type="checkbox" name="tip[]" class="calculator plus" data-plus="130" id="mebel" value="Спецификация мебели"/>
+                        <label for="mebel"><span>Спецификация мебели</span></label>
                 </div>
                 <div class="input--line custom_file_input_box">
                     <div class="custom_file_input_box_btn">
-                        <input type="file" class="custom_file_input_box_input" name="file" accept="image/*, application/pdf">
+                        <input type="file" class="custom_file_input_box_input" name="uploadfile" accept="image/*, application/pdf">
                     </div>
                     <textarea name="text" id="text" placeholder="Описание и Ваши пожелания" cols="30" rows="10"></textarea>
                 </div>
