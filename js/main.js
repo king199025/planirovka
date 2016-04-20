@@ -1,14 +1,14 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     jQuery("a.lb").lightBox();
 
 
-    $(".navbar").on("click","a", function (event) {
+    $(".navbar").on("click", "a", function (event) {
         //отменяем стандартную обработку нажатия по ссылке
         event.preventDefault();
 
         //забираем идентификатор бока с атрибута href
-        var id  = $(this).attr('href'),
+        var id = $(this).attr('href'),
 
         //узнаем высоту от начала страницы до блока на который ссылается якорь
             top = $(id).offset().top;
@@ -18,10 +18,9 @@ $(document).ready(function(){
     });
 
 
-
-    $('.load_more').on('click', function(){
+    $('.load_more').on('click', function () {
         var step = $(this).attr('data-step');
-        if(step == '2'){
+        if (step == '2') {
             $(this).children('img').attr('src', myajax.dir + '/img/load_more2.png');
             $.ajax({
                 url: myajax.act, //url, к которому обращаемся
@@ -37,8 +36,8 @@ $(document).ready(function(){
         else {
             $(this).children('img').attr('src', myajax.dir + '/img/load_more.png');
             var i = 1;
-            $('.p0').each(function(){
-                if(i > 6){
+            $('.p0').each(function () {
+                if (i > 6) {
                     $(this).remove();
                 }
                 i++;
@@ -47,27 +46,27 @@ $(document).ready(function(){
         }
     });
 
-    $(document).on('click', '.send_request', function(){
+    $(document).on('click', '.send_request', function () {
         event.preventDefault();
         $('#myModal').modal('show');
     });
 
-    $(document).on('click', '.sendMail', function(){
+    $(document).on('click', '.sendMail', function () {
         event.preventDefault();
         var flag;
-        $('.formInput').each(function(){
-            if($(this).val() == ''){
-                 flag = 0;
+        $('.formInput').each(function () {
+            if ($(this).val() == '') {
+                flag = 0;
                 return false;
             }
-            else{
+            else {
                 flag = 1;
             }
         });
 
-        if(flag == 0){
+        if (flag == 0) {
             alert('введены не все поля')
-        }else{
+        } else {
             var name = $('#name').val();
             var phone = $('#phone').val();
             var email = $('#email').val();
@@ -94,16 +93,26 @@ $(document).ready(function(){
     });
 
 
+    $('.custom_file_input_box_input').blur(function () {
+        var file = $('.custom_file_input_box_input').val()
+        if(file == ''){
+            $('.selected_file').html('Файл не выбран');
+        }
+        else {
+            $('.selected_file').html('Выбран файл: ' + file);
+        }
+    });
+
 
 });
 
- jQuery('.main-carousel').slick({
+jQuery('.main-carousel').slick({
     dots: true,
     infinite: true,
     autoplay: true,
     focusOnSelect: false,
     speed: 3000,
-    arrows: false,        
+    arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: 1
@@ -118,7 +127,7 @@ function init() {
         zoom: 16,
         controls: [],
 
-    }) ;
+    });
     myGeoObject = new ymaps.GeoObject({
 // Описание геометрии.
         geometry: {
