@@ -258,8 +258,12 @@ add_action( 'admin_post_add_order', 'admin_add_order' );
 add_action( 'admin_post_nopriv_add_order', 'admin_add_order' );
 
 function admin_add_order() {
-
-	prn($_POST);
+	$parser = new Parser();
+	$mailadmin = get_option('admin_email');
+	$text = $parser->render(TM_DIR . '/views/mail_text.php', ['post' => $_POST]);
+	//prn($mailadmin);
+	//mail($mailadmin, "Заявка с вашего сайта", "Line 1\nLine 2\nLine 3");
+	//prn($text);
 
 // Handle request then generate response using echo or leaving PHP and using HTML
 		/*header("HTTP/1.1 301 Moved Permanently");

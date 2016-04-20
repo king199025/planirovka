@@ -73,7 +73,7 @@ get_header(); // подключаем header.php ?>
     <div class="row">
         <h2><span class="red">Стоимость разработки</span> дизайна вашего помещения</h2>
         <div class="col-lg12">
-            <form action="<?= get_bloginfo('url'); ?>/wp-admin/admin-post.php?action=add_order" method="POST" id="sendForm">
+            <form action="<?= get_bloginfo('url'); ?>/wp-admin/admin-post.php?action=add_order" method="POST" id="sendForm" enctype="multipart/form-data">
                 <div class="input--line">
                     <span class="title">Планировка</span>
                     <input type="radio" value="2" id="plan1" class="calculator plan" data-type="1" name="plan"/>
@@ -101,11 +101,11 @@ get_header(); // подключаем header.php ?>
                 
                 <div class="input--line">
                     <span>Электрические сети</span>
-                    <input type="checkbox" id="roz" class="calculator kooff" data-kooff="0.5" name="electric_network"/>
+                    <input type="checkbox" id="roz" class="calculator kooff" data-kooff="0.5" name="electric_network[]" value="Розетки"/>
                         <label for="roz"><span>Розетки</span></label>
-                    <input type="checkbox" id="osv" class="calculator kooff" data-kooff="0.6" name="electric_network"/>
+                    <input type="checkbox" id="osv" class="calculator kooff" data-kooff="0.6" name="electric_network[]" value="Освещение выключатели"/>
                         <label for="osv"><span>Освещение выключатели</span></label>
-                    <input type="checkbox" id="pol" class="calculator kooff" data-kooff="0.7" name="electric_network"/>
+                    <input type="checkbox" id="pol" class="calculator kooff" data-kooff="0.7" name="electric_network[]" value="Теплый пол"/>
                     <label for="pol"><span>Теплый пол</span></label>
                 </div>
                 <div class="input--line">
@@ -115,6 +115,7 @@ get_header(); // подключаем header.php ?>
                     <input type="checkbox" id="plitka" class="calculator kooff" data-kooff="0.9" name="bathroom"/>
                         <label for="plitka"><span>Раскладка плитки</span></label>
                 </div>
+                <input type="hidden" name="summa" id="summa">
                 <div class="input--line">
                     <span>Советы дизайнера</span>
                     <input type="checkbox" name="tip" class="calculator plus" data-plus="100" id="otdmat"/><label for="otdmat"><span class="tipDiz">Спецификация отделочных <br>материалов</span></label>
@@ -124,7 +125,7 @@ get_header(); // подключаем header.php ?>
                 </div>
                 <div class="input--line custom_file_input_box">
                     <div class="custom_file_input_box_btn">
-                        <input type="file" class="custom_file_input_box_input">
+                        <input type="file" class="custom_file_input_box_input" name="file" accept="image/*, application/pdf">
                     </div>
                     <textarea name="text" id="text" placeholder="Описание и Ваши пожелания" cols="30" rows="10"></textarea>
                 </div>

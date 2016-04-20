@@ -35,6 +35,7 @@ function endSum(){
         });
 
         $('.sumValue').html(Math.round(sum));
+        $('#summa').val(Math.round(sum));
 
     },1);
 
