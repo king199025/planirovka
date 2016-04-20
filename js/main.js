@@ -21,16 +21,30 @@ $(document).ready(function(){
 
     $('.load_more').on('click', function(){
         var step = $(this).attr('data-step');
-        $.ajax({
-            url: myajax.act, //url, к которому обращаемся
-            type: "POST",
-            data: "action=load_work&step=" + step,
-            success: function (data) {
-                $('.load_more').attr('data-step', parseInt(step, 10) + 1);
-                $('.load_more').before(data);
-                console.log(data);
-            }
-        });
+        if(step == '2'){
+            $(this).children('img').attr('src', myajax.dir + '/img/load_more2.png');
+            $.ajax({
+                url: myajax.act, //url, к которому обращаемся
+                type: "POST",
+                data: "action=load_work&step=" + step,
+                success: function (data) {
+                    $('.load_more').attr('data-step', parseInt(step, 10) + 1);
+                    $('.load_more').before(data);
+                    console.log(data);
+                }
+            });
+        }
+        else {
+            $(this).children('img').attr('src', myajax.dir + '/img/load_more.png');
+            var i = 1;
+            $('.p0').each(function(){
+                if(i > 6){
+                    $(this).remove();
+                }
+                i++;
+            });
+            $('.load_more').attr('data-step', parseInt(step, 10) - 1);
+        }
     });
 
     $(document).on('click', '.send_request', function(){

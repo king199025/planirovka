@@ -10,7 +10,7 @@
 
             <div class="sliderWr">
                 <?php the_post_thumbnail('full'); ?>
-                <span class="caption_photo"><?php the_title(); ?></span>
+                <span class="caption_photo"><?php echo get_post_meta(get_the_ID(), 'size', 1); ?></span>
             </div>
 
     <?php endwhile ;  ?>

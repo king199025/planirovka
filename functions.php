@@ -91,7 +91,8 @@ function add_scripts() { // добавление скриптов
 	wp_localize_script('main', 'myajax',
 		array(
 			'url' => admin_url('admin-ajax.php'),
-			'act' => admin_url('admin-ajax.php')
+			'act' => admin_url('admin-ajax.php'),
+			'dir' => get_bloginfo('template_directory')
 		)
 	);
 }
@@ -176,6 +177,40 @@ function sliderShortcode()
 }
 
 add_shortcode('slider', 'sliderShortcode');
+
+add_action('save_post', 'myExtraFieldsUpdate', 10, 1);
+
+/* Сохраняем данные, при сохранении поста */
+function myExtraFieldsUpdate($post_id)
+{
+	if (!isset($_POST['extra'])) return false;
+	foreach ($_POST['extra'] as $key => $value) {
+		if (empty($value)) {
+			delete_post_meta($post_id, $key); // удаляем поле если значение пустое
+			continue;
+		}
+
+		update_post_meta($post_id, $key, $value); // add_post_meta() работает автоматически
+	}
+	return $post_id;
+}
+
+function extraFieldsProductsSubtitle($post)
+{
+	?>
+	<p>
+		<span>Текст под слайдом: </span>
+		<input type="text" name='extra[size]' value="<?php echo get_post_meta($post->ID, "size", 1); ?>">
+	</p>
+	<?php
+}
+
+function myExtraFieldsProducts()
+{
+	add_meta_box('extra_size', 'Текст под слайдом', 'extraFieldsProductsSubtitle', 'slider', 'normal', 'high');
+}
+
+add_action('add_meta_boxes', 'myExtraFieldsProducts', 1);
 /*------------------------------------------ КОНЕЦ СЛАЙДЕР ---------------------------------------------------------*/
 
 /*--------------------------------------------- РАБОТЫ -------------------------------------------------------------*/
@@ -239,9 +274,10 @@ function load_work()
 {
 	$args = array(
 		'post_type' => 'work',
-		'paged' => $_POST['step'],
 		'post_status' => 'publish',
-		'posts_per_page' => 6);
+		'posts_per_page' => 1000,
+		'offset' => 6,
+	);
 
 	$my_query = null;
 	$my_query = new WP_Query($args);
