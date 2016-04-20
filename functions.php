@@ -304,19 +304,24 @@ function admin_add_order()
     $mailadmin = get_option('admin_email');
     $text = $parser->render(TM_DIR . '/views/mail_text.php', ['post' => $_POST], false);
     //prn($mailadmin);
-    $headers[] = 'From: Сайт wordpress@flat.art-craft.tk';
+    /*$headers[] = 'From: Сайт wordpress@flat.art-craft.tk';*/
     $headers[] = "Content-type: text/html;";
 
-
-    if (isset($_FILES['uploadfile']['name'])) {
+//prn($_FILES);
+    if (isset($_FILES['uploadfile']['name']['0'])) {
+        $dirFile = [];
+        $i = 0;
         $uploaddir = TM_DIR . '/files/';
-        $uploadfile = $uploaddir . basename($_FILES['uploadfile']['name']);
+        foreach ($_FILES['uploadfile']['name'] as $item) {
+            $uploadfile = $uploaddir . basename($item);
+            $dirFile[] = $uploadfile;
 
-// Копируем файл из каталога для временного хранения файлов:
-        if (copy($_FILES['uploadfile']['tmp_name'], $uploadfile)) {
-            $k = wp_mail($mailadmin, "Заявка с вашего сайта", $text, $headers, $uploadfile);
-
+            copy($_FILES['uploadfile']['tmp_name'][$i], $uploadfile);
+            $i++;
         }
+
+        $k = wp_mail($mailadmin, "Заявка с вашего сайта", $text, $headers, $dirFile);
+
     } else {
         wp_mail($mailadmin, "Заявка с вашего сайта", $text, $headers);
     }
@@ -327,8 +332,8 @@ function admin_add_order()
     //prn($text);
 
 // Handle request then generate response using echo or leaving PHP and using HTML
-    /*header("HTTP/1.1 301 Moved Permanently");
+    header("HTTP/1.1 301 Moved Permanently");
     header("Location: ".get_bloginfo('url'));
-    exit();*/
+    exit();
 
 }
