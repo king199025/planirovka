@@ -87,9 +87,11 @@ footer, header, section, nav, .infoValue {
   .main-carousel .sliderWr span.caption_photo {
     margin-top: 30px; }
 
-#lightbox-container-image-data-box, #lightbox-container-image-box {
-  max-width: 90% !important; }
+/*
 
+#lightbox-container-image-data-box, #lightbox-container-image-box {
+	max-width: 90% !important;
+}*/
 .navbar-default {
   background-color: #fff;
   border-color: #fff; }
