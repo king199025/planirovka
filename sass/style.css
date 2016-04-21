@@ -87,6 +87,39 @@ footer, header, section, nav, .infoValue {
   .main-carousel .sliderWr span.caption_photo {
     margin-top: 30px; }
 
+.owl-theme .owl-controls {
+  margin-top: 10px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span {
+  background: #f70000; }
+
+.owl-theme .owl-controls .owl-page span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 5px 4px;
+  filter: Alpha(Opacity=50);
+  opacity: 1;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #FFFFFF; }
+
+#owl-demo .item img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+.allWork {
+  display: none; }
+
+/*.owl-buttons {
+	display: none;
+}*/
 /*
 
 #lightbox-container-image-data-box, #lightbox-container-image-box {

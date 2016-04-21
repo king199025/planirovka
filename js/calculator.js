@@ -12,36 +12,36 @@ function endSum(){
     var sum = 0;
     //получаем значение
     setTimeout(function(){
-        var planZnachenie = parseFloat($('.planZnachenie').val());
-        var plan = parseFloat($('input[name="plan"]:checked').val());
+        var planZnachenie = parseFloat(jQuery('.planZnachenie').val());
+        var plan = parseFloat(jQuery('input[name="plan"]:checked').val());
         var square = planZnachenie*plan;
 
         //проверяю какие чекбоксы нажаты и получаю их кооффициет
         sum += square;
-        $('.kooff').each(function(){
-            if($(this).prop('checked')){
+        jQuery('.kooff').each(function(){
+            if(jQuery(this).prop('checked')){
                 //alert(123);
-                var kooff = parseFloat($(this).attr('data-kooff'));
+                var kooff = parseFloat(jQuery(this).attr('data-kooff'));
                 //console.log(kooff);
                 sum += square*kooff;
             }
         });
 
-        $('.plus').each(function(){
-            if($(this).prop('checked')){
-                var plus = parseFloat($(this).attr('data-plus'));
+        jQuery('.plus').each(function(){
+            if(jQuery(this).prop('checked')){
+                var plus = parseFloat(jQuery(this).attr('data-plus'));
                 sum += plus;
             }
         });
 
-        $('.sumValue').html(Math.round(sum));
-        $('#summa').val(Math.round(sum));
+        jQuery('.sumValue').html(Math.round(sum));
+        jQuery('#summa').val(Math.round(sum));
 
     },1);
 
 }
 
-$(document).ready(function(){
+jQuery(document).ready(function($){
     $(document).on('click','.calculator', function(){
         endSum();
     });

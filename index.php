@@ -141,7 +141,7 @@ get_header(); // подключаем header.php ?>
 
                 <div class="infoValue">
                     <span>Стоимость</span> <span class="sumValue">0</span>$
-                    <input type="submit" class="send_request" data-toggle="modal" data-target="#myModal" value="Отправить заявку">
+                    <input type="submit" class="send_request" value="Отправить заявку">
                 </div>
             </form>
         </div>

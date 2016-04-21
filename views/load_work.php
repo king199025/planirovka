@@ -8,9 +8,11 @@
             <!--<div class="row">-->
             <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
                 <div class="col-lg-4 col-md-4 col-xs-6 p0">
-                    <a class="lb" href="<?= wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ?>">
+                    <a class="" href="<?= wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ?>" rel="fancybox">
                         <div class="workInfoWr">
-                            <?php the_post_thumbnail('medium'); ?>
+                            <div class="work--imagebox">
+                                <img src="<?= wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ?>" alt="" style="height: 200px">
+                            </div>
                             <div class="workInfo">
                                 <div class="workTitle"><?php the_title(); ?></div>
                                 <div class="workDate"><?= get_the_date('Y-m-d'); ?></div>
